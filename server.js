@@ -29,3 +29,7 @@ app.delete("/api/notes/:id", (req, res) => {
     fs.writeFileSync("./db/db.json", JSON.stringify(delNote));
     res.json(delNote);
 });
+
+app.listen(PORT, function () {
+    console.log("App server now on PORT: " + PORT);
+});
