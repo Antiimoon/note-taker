@@ -30,6 +30,15 @@ app.delete("/api/notes/:id", (req, res) => {
     res.json(delNote);
 });
 
+//call index.html
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "/public/index.html"));
+});
+//call notes.html
+app.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
+});
+
 app.listen(PORT, function () {
     console.log("App server now on PORT: " + PORT);
 });
